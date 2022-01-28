@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recome
+spec:
+  selector:
+    matchLabels:
+      app: recome
+  template:
+    metadata:
+      labels:
+        app: recome
+    spec:
+      containers:
+      - name: recome
+        image: gcr.io/my-project-600-339318/recome:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

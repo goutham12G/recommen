@@ -2,10 +2,10 @@
 pipeline {
 
   environment {
-    PROJECT = "useful-cathode-334010"
-    APP_NAME = "adservice"
+    PROJECT = "my-project-600-339318"
+    APP_NAME = "recome"
     FE_SVC_NAME = "${APP_NAME}-frontend"
-    CLUSTER = "kubernet"
+    CLUSTER = "iphone"
     CLUSTER_ZONE = "us-central1-c"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}"
     JENKINS_CRED = "${PROJECT}"
@@ -63,8 +63,8 @@ spec:
     stage('Deploy Dev') {
       steps {
         container('kubectl') {
-          sh "gcloud container clusters get-credentials kubernet --zone us-central1-c --project useful-cathode-334010"
-          sh "kubectl apply -f recommendationservice.yaml"
+          sh "gcloud container clusters get-credentials iphone --zone us-central1-c --project my-project-600-339318"
+          
          
         }
       }
